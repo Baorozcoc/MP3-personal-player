@@ -1,0 +1,162 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+.initial{
+  font-size: 4vh !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  transition:all 0.4s ease;
+}
+:root{
+  --first-color: #f1f1e7;
+  --second-color: #584942;
+  
+}
+@font-face {
+  font-family: 'FuenteLogo';
+  src: local('FuenteLogo'), 
+       local('FuenteLogo'), 
+       url('../public/Fuente.ttf') format('truetype'); 
+}
+.Logo{
+  font-family: 'FuenteLogo';
+}
+.fondo{
+  background-color: var(--first-color);
+}
+.contenedor{
+  background-color: var(--second-color);
+}
+.pres{
+  top: 48px;
+  left:90px;
+  font-size: 14px;
+}
+.songs{
+  height: 80%;
+}
+.contenedor::-webkit-scrollbar {
+  width: 16px;               
+}
+.contenedor::-webkit-scrollbar-track {
+  background: var(--second-color);        
+}
+.contenedor::-webkit-scrollbar-thumb {
+  background-color: var(--first-color);    
+  border-radius: 20px;       
+  border: 3px solid var(--second-color);  
+}
+.toChoose{
+  cursor:pointer;
+  
+}
+.toChoose:hover{
+  transform: scale(0.98);
+}
+.Folder{
+  background-repeat: no-repeat; 
+	background-attachment: scroll;
+	background-size: cover;
+  width:45%;
+  min-width: 260px;
+  border: 2px solid var(--first-color);
+}
+.Salsa{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgb(0, 0, 0)), url('../public/Salsa.jpg');
+}
+.Electro{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/Electro.jpg');
+}
+.Roman{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/Roman.jpg');
+}
+.Rock{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/Rock.jpg');
+}
+.RockEsp{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/RockEsp.jpg');
+}
+.Pop{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/Pop.jpg');
+}
+.Instrum{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), rgba(0, 0, 0, 0.9)), url('../public/Instrumen.jpg');
+}
+.FondoSinOpcion{
+  background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.1), var(--first-color)), url('../public/Fondo.jpg');
+  background-repeat: no-repeat; 
+	background-attachment: scroll;
+	background-size: cover;
+}
+.inf-button{
+  border-radius: 30px 30px 0px 0px !important;
+  background-color: var(--second-color) !important;
+  /*border-top: 2px solid var(--first-color) !important;
+  border-left: 2px solid var(--first-color) !important;
+  border-right: 2px solid var(--first-color) !important;*/
+}
+.inf-button:hover{
+  background-color: #3F4E4F !important;
+}
+.RepetirIco{
+  display: none !important;
+}
+@media screen and (max-width: 550px) {
+  .Repetir{
+    display: none !important;
+  }
+  .RepetirIco{
+    display: block !important;
+  }
+  .volumen{
+    display: none !important;
+  }
+}
+input[type=range]{
+  height: 2.2em;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+/*progress support*/
+input[type=range]{
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 1em + var(--ratio) * (100% - 1em));
+}
+
+
+/*webkit*/
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 2.5em;
+  border-radius: 1em;
+  background: linear-gradient(var(--second-color),#3F464D);
+  border: 1px solid #000000;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(max((1em - 1px - 1px) * 0.5,0px) - 2.5em * 0.5);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 1em;
+  border: 1px solid #000000;
+  border-radius: 0.5em;
+  background: #6e1515;
+  box-shadow: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(var(--second-color),#3F464D) 0/var(--sx) 100% no-repeat, #ffffff;
+}
