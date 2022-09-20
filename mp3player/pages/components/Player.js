@@ -39,7 +39,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             setMaxTiempo(Duracion);
             setPausado(0);
         }   
-        if(tiempo>=maxTiempo){
+        if(tiempo>=cancion.duration-1){
             setTiempo(0);
             return siguienteCancion();
         }
