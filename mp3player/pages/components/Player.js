@@ -17,6 +17,39 @@ function toStr(texto){
     })
 }
 
+const keyDownHandler = (e)=>{
+    console.log("Ocurre el evento",e.key);
+    switch (e.key) {
+        case "MediaTrackNext":
+            siguienteCancion();
+            break;
+        case "ArrowRight":
+            if(cancion.volume!==100){
+               setVolume(cancion.volume+1);
+                cancion.volume+=1; 
+            }
+            break;
+        case "MediaTrackPrevious":
+            anteriorCancion();
+            break;
+        case "ArrowLeft":
+            if(cancion.volume!==0){
+               setVolume(cancion.volume-1);
+                cancion.volume-=1; 
+            }
+            break;
+    }
+}
+
+const onKeyDown = (deps = []) => {
+    useEffect(() => {
+        document.addEventListener("keydown", keyDownHandler);
+        return () => {
+          document.removeEventListener("keydown", keyDownHandler);
+        };
+    }, deps);
+}
+
 const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categoria,setCategoria,Duracion,setDuracion,reproduciendo,setReproduciendo,repetir,setRepetir})=>{
     const [volume,setVolume]=useState(1);
     const [tiempo, setTiempo]=useState(0);
@@ -30,7 +63,6 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         setTiempo(parseInt(event.target.value));
         cancion.currentTime=event.target.value;
     }
-    
     useEffect(()=>{
         if(reproduciendo===0){
             cancion.volume=volume;
@@ -50,31 +82,8 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             clearInterval(timerId);
             };
         }
-        const keyDownHandler = (e)=>{
-            console.log("Ocurre el evento",e.key);
-            switch (e.key) {
-                case "MediaTrackNext":
-                    siguienteCancion();
-                    break;
-                case "ArrowRight":
-                    if(cancion.volume!==100){
-                       setVolume(cancion.volume+1);
-                        cancion.volume+=1; 
-                    }
-                    break;
-                case "MediaTrackPrevious":
-                    anteriorCancion();
-                    break;
-                case "ArrowLeft":
-                    if(cancion.volume!==0){
-                       setVolume(cancion.volume-1);
-                        cancion.volume-=1; 
-                    }
-                    break;
-            }
-        }
-        window.addEventListener("keydown", keyDownHandler);
     });
+    onKeyDown([]);
     function refresh(){
         var n= Math.trunc(cancion.currentTime);
         setTiempo(n)
