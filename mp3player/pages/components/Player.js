@@ -199,6 +199,13 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             e.addEventListener('input', () => e.style.setProperty('--value', e.value));
         }
     }
+    if ('mediaSession' in navigator) {
+          navigator.mediaSession.setActionHandler('play', Seguir());
+          navigator.mediaSession.setActionHandler('pause',Pausar());
+          navigator.mediaSession.setActionHandler('stop', Pausar());
+          navigator.mediaSession.setActionHandler('previoustrack', anteriorCancion());
+          navigator.mediaSession.setActionHandler('nexttrack', siguienteCancion());
+    }
     return(
         <div className="position-absolute d-flex flex-column align-items-center bottom-0 w-100">
             <div className="bg-primary py-2 w-100">
