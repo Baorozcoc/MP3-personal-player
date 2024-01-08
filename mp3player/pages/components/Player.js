@@ -50,8 +50,8 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             clearInterval(timerId);
             };
         }
-        window.addEventListener("keydown", function(event) {
-            switch (event.key) {
+        const keyDownHandler = (e)=>{
+            switch (e.key) {
                 case "MediaTrackNext":
                     siguienteCancion();
                     break;
@@ -70,11 +70,12 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
                         cancion.volume+=1; 
                     }
                     break;
-                default:
-                    break;
             }
-    
-        });
+        }
+        document.addEventListener("keydown", keyDownHandler);
+        return () => {
+            document.removeEventListener("keydown", keyDownHandler);
+        };
     });
     function refresh(){
         var n= Math.trunc(cancion.currentTime);
