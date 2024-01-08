@@ -30,6 +30,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         setTiempo(parseInt(event.target.value));
         cancion.currentTime=event.target.value;
     }
+    
     useEffect(()=>{
         if(reproduciendo===0){
             cancion.volume=volume;
@@ -61,79 +62,127 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         setPausado(1);
     }
     function Seguir(){
-        cancion.play();
-        setPausado(0);
+        try {
+            cancion.play();
+            setPausado(0);
+        } catch (error) {
+            try {
+                cancion.pause();
+                let lastTime = cancion.currentTime;
+                setCancion(new Audio(listado[sigcancion].Ubicacion));
+                setReproduciendo(0);
+                setTiempo(parseInt(lastTime));
+                cancion.currentTime=lastTime;
+            } catch (error) {
+                alert("No es posible acceder a la canción, por favor recargue!");
+            }
+        }
     }
     function anteriorCancion(){
-        cancion.pause();
-        var sigcancion=listado.map(function(s){
-            return s.Titulo;
-        }).indexOf(Titulo);
-        if(repetir==="Song"){//Se Repite la canción
-            setCancion(new Audio(listado[sigcancion].Ubicacion));
-        }
-        else if(repetir==="List"){//Se Repite la lista
-            if(sigcancion!==0&&sigcancion!==-1){
-                setCancion(new Audio(listado[sigcancion-1].Ubicacion));
-                setTitulo(listado[sigcancion-1].Titulo);
-                setAutor(listado[sigcancion-1].Autor);
-                setCategoria(listado[sigcancion-1].Categoria);
-                setDuracion(listado[sigcancion-1].Duracion);
+        try {
+            cancion.pause();
+            var sigcancion=listado.map(function(s){
+                return s.Titulo;
+            }).indexOf(Titulo);
+            if(repetir==="Song"){//Se Repite la canción
+                setCancion(new Audio(listado[sigcancion].Ubicacion));
             }
-            else if(sigcancion===0&&sigcancion!==-1){
-                setCancion(new Audio(listado[listado.length-1].Ubicacion));
-                setTitulo(listado[listado.length-1].Titulo);
-                setAutor(listado[listado.length-1].Autor);
-                setCategoria(listado[listado.length-1].Categoria);
-                setDuracion(listado[listado.length-1].Duracion);
+            else if(repetir==="List"){//Se Repite la lista
+                if(sigcancion!==0&&sigcancion!==-1){
+                    setCancion(new Audio(listado[sigcancion-1].Ubicacion));
+                    setTitulo(listado[sigcancion-1].Titulo);
+                    setAutor(listado[sigcancion-1].Autor);
+                    setCategoria(listado[sigcancion-1].Categoria);
+                    setDuracion(listado[sigcancion-1].Duracion);
+                }
+                else if(sigcancion===0&&sigcancion!==-1){
+                    setCancion(new Audio(listado[listado.length-1].Ubicacion));
+                    setTitulo(listado[listado.length-1].Titulo);
+                    setAutor(listado[listado.length-1].Autor);
+                    setCategoria(listado[listado.length-1].Categoria);
+                    setDuracion(listado[listado.length-1].Duracion);
+                }
             }
-        }
-        else{
-            if(sigcancion!==0&&sigcancion!==-1){
-                setCancion(new Audio(listado[sigcancion-1].Ubicacion));
-                setTitulo(listado[sigcancion-1].Titulo);
-                setAutor(listado[sigcancion-1].Autor);
-                setCategoria(listado[sigcancion-1].Categoria);
-                setDuracion(listado[sigcancion-1].Duracion);
+            else{
+                if(sigcancion!==0&&sigcancion!==-1){
+                    setCancion(new Audio(listado[sigcancion-1].Ubicacion));
+                    setTitulo(listado[sigcancion-1].Titulo);
+                    setAutor(listado[sigcancion-1].Autor);
+                    setCategoria(listado[sigcancion-1].Categoria);
+                    setDuracion(listado[sigcancion-1].Duracion);
+                }
             }
+            setReproduciendo(0);
+        } catch (error) {
+            alert("No es posible acceder a la canción anterior!");
         }
-        setReproduciendo(0);
+        
     }
     function siguienteCancion(){
-        cancion.pause();
-        var sigcancion=listado.map(function(s){
-            return s.Titulo;
-        }).indexOf(Titulo);
-        if(repetir==="Song"){//Se Repite la canción
-            setCancion(new Audio(listado[sigcancion].Ubicacion));
-        }
-        else if(repetir==="List"){//Se Repite la lista
-            if(sigcancion!==listado.length-1&&sigcancion!==-1){
-                setCancion(new Audio(listado[sigcancion+1].Ubicacion));
-                setTitulo(listado[sigcancion+1].Titulo);
-                setAutor(listado[sigcancion+1].Autor);
-                setCategoria(listado[sigcancion+1].Categoria);
-                setDuracion(listado[sigcancion+1].Duracion);
+        try {
+            cancion.pause();
+            var sigcancion=listado.map(function(s){
+                return s.Titulo;
+            }).indexOf(Titulo);
+            if(repetir==="Song"){//Se Repite la canción
+                setCancion(new Audio(listado[sigcancion].Ubicacion));
             }
-            else if(sigcancion===listado.length-1&&sigcancion!==-1){
-                setCancion(new Audio(listado[0].Ubicacion));
-                setTitulo(listado[0].Titulo);
-                setAutor(listado[0].Autor);
-                setCategoria(listado[0].Categoria);
-                setDuracion(listado[0].Duracion);
+            else if(repetir==="List"){//Se Repite la lista
+                if(sigcancion!==listado.length-1&&sigcancion!==-1){
+                    setCancion(new Audio(listado[sigcancion+1].Ubicacion));
+                    setTitulo(listado[sigcancion+1].Titulo);
+                    setAutor(listado[sigcancion+1].Autor);
+                    setCategoria(listado[sigcancion+1].Categoria);
+                    setDuracion(listado[sigcancion+1].Duracion);
+                }
+                else if(sigcancion===listado.length-1&&sigcancion!==-1){
+                    setCancion(new Audio(listado[0].Ubicacion));
+                    setTitulo(listado[0].Titulo);
+                    setAutor(listado[0].Autor);
+                    setCategoria(listado[0].Categoria);
+                    setDuracion(listado[0].Duracion);
+                }
             }
-        }
-        else{
-            if(sigcancion!==listado.length-1&&sigcancion!==-1){
-                setCancion(new Audio(listado[sigcancion+1].Ubicacion));
-                setTitulo(listado[sigcancion+1].Titulo);
-                setAutor(listado[sigcancion+1].Autor);
-                setCategoria(listado[sigcancion+1].Categoria);
-                setDuracion(listado[sigcancion+1].Duracion);
+            else{
+                if(sigcancion!==listado.length-1&&sigcancion!==-1){
+                    setCancion(new Audio(listado[sigcancion+1].Ubicacion));
+                    setTitulo(listado[sigcancion+1].Titulo);
+                    setAutor(listado[sigcancion+1].Autor);
+                    setCategoria(listado[sigcancion+1].Categoria);
+                    setDuracion(listado[sigcancion+1].Duracion);
+                }
             }
+            setReproduciendo(0);
+        } catch (error) {
+            alert("No es posible acceder a la canción siguiente!");
         }
-        setReproduciendo(0);
+        
     }
+    document.addEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "MediaTrackNext":
+                siguienteCancion();
+                break;
+            case "ArrowRight":
+                if(cancion.volume!==100){
+                   setVolume(cancion.volume+1);
+                    cancion.volume+=1; 
+                }
+                break;
+            case "MediaTrackPrevious":
+                anteriorCancion();
+                break;
+            case "ArrowLeft":
+                if(cancion.volume!==100){
+                   setVolume(cancion.volume+1);
+                    cancion.volume+=1; 
+                }
+                break;
+            default:
+                break;
+        }
+
+    });
     if(typeof window !== 'undefined'){
         for (let e of window.document.querySelectorAll('input[type="range"]')) {
             e.style.setProperty('--value', e.value);
@@ -144,22 +193,22 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
     }
     return(
         <div className="position-absolute d-flex flex-column align-items-center bottom-0 w-100">
-            <div>
-                <img className="btn btn-primary inf-button" onClick={()=> anteriorCancion()} src="/Prev.png"/>
-                <img className="btn btn-primary inf-button" onClick={()=> Seguir()} src="/Play.png"/>
-                <img className="btn btn-primary inf-button" onClick={()=> Pausar()} src="/Pause.png"/>
-                <img className="btn btn-primary inf-button" onClick={()=> siguienteCancion()} src="/Next.png"/>
-            </div>
             <div className="bg-primary py-2 w-100">
+                <div className="w-100 d-flex justify-content-center">
+                    <img className="btn btn-primary action-button" onClick={()=> anteriorCancion()} src="/Prev.png"/>
+                    <img className="btn btn-primary action-button" onClick={()=> Seguir()} src="/Play.png"/>
+                    <img className="btn btn-primary action-button" onClick={()=> Pausar()} src="/Pause.png"/>
+                    <img className="btn btn-primary action-button" onClick={()=> siguienteCancion()} src="/Next.png"/>
+                </div>
                 <div className="text-light h5 text-center">
                     {Titulo} - {Autor}
                 </div>
                 <div className="w-100 d-flex justify-content-center align-items-center text-light h6" >
                 {getTime(tiempo)} <input type="range" id="time" className="time w-75 px-3" min="0" max={maxTiempo} step="1" value={tiempo} onChange={handleChangeTiempo}></input> {getTime(maxTiempo)}
                 </div>
-                <div  className="w-100 d-flex justify-content-evenly align-items-center text-light h6">
+                <div  className="w-100 d-flex justify-content-evenly align-items-center text-light flex-column-reverse flex-sm-row h6">
                     <div className="d-flex justify-content-center align-items-center text-light h6 w-50">
-                        <div className="Repetir">Repetir:</div> 
+                        <div className="Repetir d-none d-sm-block">Repetir:</div> 
                         {repetir==="No"
                         ?<button className="btn btn-light mx-1 Repetir">No</button>
                         :<button className="btn btn-outline-light text-light mx-1 Repetir" onClick={()=> setRepetir("No")}>No</button>

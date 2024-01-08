@@ -1262,7 +1262,7 @@
         {"ID":1257,"Titulo":"Before I forget","Autor":"Slikpnot","Duracion":241, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=19J6olOIEpQMVpUZXr4_mQqeLtzk8z-5k"},
         {"ID":1258,"Titulo":"Dead memories","Autor":"Slikpnot","Duracion":266, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1njJqdkjO0pu4waooWy8WFodSciSXV8y8"},
         {"ID":1259,"Titulo":"Duality","Autor":"Slikpnot","Duracion":213, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1zbcTnMEfD9X5eJS9L9HvtqqAlI-_uypT"},
-        {"ID":1260,"Titulo":"Psychososial","Autor":"Slikpnot","Duracion":260, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1qJeX1jv3MOrg1eELIotRdfqyhI1QJZIQ"},
+        {"ID":1260,"Titulo":"Psychosocial","Autor":"Slikpnot","Duracion":260, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1qJeX1jv3MOrg1eELIotRdfqyhI1QJZIQ"},
         {"ID":1261,"Titulo":"Vermillion","Autor":"Slikpnot","Duracion":316, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1Yu8l-JEUfA6thPQhTP5ueHE6tm4K11rR"},
         {"ID":1262,"Titulo":"My plague","Autor":"Slikpnot","Duracion":172, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1czVHqY4-Ryha4QBhcFmEfgIWvobgjSsS"},
         {"ID":1263,"Titulo":"Sulfur","Autor":"Slikpnot","Duracion":277, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1d9MVxFTVqEDWKux4pRtuAgsp0nfEFRZo"},
@@ -1309,7 +1309,22 @@
         {"ID":1304,"Titulo":"Again","Autor":"Lenny Kravitz","Duracion":274, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1ocjWuaWwUBvFy7CxDBkIztEOYNlI97uk"},
         {"ID":1305,"Titulo":"Heaven","Autor":"Bryan Adams","Duracion":250, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=12FzZSrzM0ta7TbRwoTzSJ7zMwS9jMzho"},
         {"ID":1306,"Titulo":"A horse with no name","Autor":"America","Duracion":252, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=10yMncgD6MCVeqTlT28cyY8ceH_8duIS5"},
-        {"ID":1307,"Titulo":"Origin - Album","Autor":"Evanescence","Duracion":2787, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=17C6A4yPdpHf05p5_kf80fIY00j58-eEf"}
+        {"ID":1307,"Titulo":"Origin - Album","Autor":"Evanescence","Duracion":2787, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=17C6A4yPdpHf05p5_kf80fIY00j58-eEf"},
+        {"ID":1308,"Titulo":"Across the line","Autor":"Linkin Park","Duracion":183, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1vYerkDd7UQnhwuiyTcLP4RtpiFHuGDls"},
+        {"ID":1309,"Titulo":"Host (Rare B-side)","Autor":"Muse","Duracion":256, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1uNsz-1sJ2oY1jPuoPvYKNAzUIwKy57n_"},
+        {"ID":1310,"Titulo":"Hyper music","Autor":"Muse","Duracion":202, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1IoEjwGMv4RyCFoUaAYbRVGlu9PXib7bi"},
+        {"ID":1311,"Titulo":"Sing for absolution","Autor":"Muse","Duracion":291, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1sAlQmdnkCO9T12wGEWxBl5_3zYwR_Ic5"},
+        {"ID":1312,"Titulo":"Stockholm syndrome","Autor":"Muse","Duracion":301, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1Iay3R8C3d2xvzmbWVx_0GGVEheSH3ZjV"},
+        {"ID":1313,"Titulo":"Supremacy","Autor":"Muse","Duracion":291, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1siE3xYIhj4meLew99a0V0M2-lPJFr2EK"},
+        {"ID":1314,"Titulo":"Take a bow","Autor":"Muse","Duracion":326, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=172q9dhMPimMLje-b1niG2nFkvTTKtcrH"},
+        {"ID":1315,"Titulo":"Unnatural selection","Autor":"Muse","Duracion":413, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1Ao3nNZjvfuF73LFPfeXPWhfAF8P4Updm"},
+        {"ID":1316,"Titulo":"Blackout","Autor":"Muse","Duracion":262, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=15kpu_S8KbHLMT8xEwcbgCASb5OwMHUY8"},
+        {"ID":1317,"Titulo":"Time is running out","Autor":"Muse","Duracion":236, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1zU9kK1vlpeIgdmLulybnsatiQpDonoug"},
+        {"ID":1318,"Titulo":"End of all days","Autor":"30 seconds to Mars","Duracion":289, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1un4NqJDQgNqcI5c6N_oeH98Sa6zGJNfO"},
+        {"ID":1319,"Titulo":"Feeling good","Autor":"Muse","Duracion":198, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1JGFPeQyxZfr5P52ZLwqStw-oThGuPoBg"},
+        {"ID":1320,"Titulo":"Underground 9.0","Autor":"Linkin Park","Duracion":231, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1GzenszhCtiTL-EJhSpmBHwHpd9cZrTrw"},
+        {"ID":1321,"Titulo":"High voltage","Autor":"Linkin Park","Duracion":227, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=10P2lPjlPJTrogID5lMVfboO05XDptt4-"},
+        {"ID":1322,"Titulo":"Anywhere","Autor":"Evanescence","Duracion":364, "Categoria":"RockEng","Ubicacion":"https://docs.google.com/uc?export=open&id=1Uxd9--Q_rqbcPoalLSezb73iib3a-Rma"}
     ]
 }
 

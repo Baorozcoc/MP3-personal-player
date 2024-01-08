@@ -66,7 +66,7 @@ function Orden(lista){
         <img src='/logo.png' alt='Logo' className='mx-2'/>MP3 Player
       </div>
       <div className='position-absolute fw-bolder pres'>
-        Creado por Berny Alejandro Orozco C. <br/> baorozcoc@unal.edu.co
+        Creado por Berny Alejandro Orozco C. <br/>
       </div>
       {option===0?
       <div className='FondoSinOpcion w-100 h-75 d-flex flex-column justify-content-center align-items-center p-2'>
@@ -74,7 +74,7 @@ function Orden(lista){
         <button type="button" onClick={()=> setOption(2)} className="btn btn-outline-primary w-100 fw-bolder initial p-2 m-2">Por Categorias</button>
         
       </div>:
-      <div className='mx-4 h-75'>
+      <div className='mx-0 mx-md-4 h-75'>
         <button type="button" onClick={()=> AllSongs()} className="btn btn-outline-primary fw-bolder">Todas las canciones</button>
         <button type="button" onClick={()=> setOption(2)} className="btn btn-outline-primary fw-bolder">Por Categorias</button>
         
