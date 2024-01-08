@@ -72,9 +72,9 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
                     break;
             }
         }
-        document.addEventListener("keydown", keyDownHandler);
+        window.addEventListener("keydown", keyDownHandler);
         return () => {
-            document.removeEventListener("keydown", keyDownHandler);
+            window.removeEventListener("keydown", keyDownHandler);
         };
     },[]);
     function refresh(){
