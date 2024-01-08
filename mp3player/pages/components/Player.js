@@ -199,7 +199,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             e.addEventListener('input', () => e.style.setProperty('--value', e.value));
         }
     }
-    if ('mediaSession' in navigator) {
+    if (navigator && navigator.mediaSession) {
           navigator.mediaSession.setActionHandler('play', Seguir());
           navigator.mediaSession.setActionHandler('pause',Pausar());
           navigator.mediaSession.setActionHandler('stop', Pausar());
