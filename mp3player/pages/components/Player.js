@@ -181,31 +181,6 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         }
         
     }
-    document.addEventListener("keydown", function(event) {
-        switch (event.key) {
-            case "MediaTrackNext":
-                siguienteCancion();
-                break;
-            case "ArrowRight":
-                if(cancion.volume!==100){
-                   setVolume(cancion.volume+1);
-                    cancion.volume+=1; 
-                }
-                break;
-            case "MediaTrackPrevious":
-                anteriorCancion();
-                break;
-            case "ArrowLeft":
-                if(cancion.volume!==100){
-                   setVolume(cancion.volume+1);
-                    cancion.volume+=1; 
-                }
-                break;
-            default:
-                break;
-        }
-
-    });
     if(typeof window !== 'undefined'){
         for (let e of window.document.querySelectorAll('input[type="range"]')) {
             e.style.setProperty('--value', e.value);
