@@ -60,8 +60,8 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
                 break;
             case "ArrowRight":
                 if(cancion.volume!==100){
-                setVolume(cancion.volume+1);
-                    cancion.volume+=1; 
+                setVolume(cancion.volume+0.01);
+                    cancion.volume+=0.01; 
                 }
                 break;
             case "MediaTrackPrevious":
@@ -69,8 +69,8 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
                 break;
             case "ArrowLeft":
                 if(cancion.volume!==0){
-                setVolume(cancion.volume-1);
-                    cancion.volume-=1; 
+                setVolume(cancion.volume-0.01);
+                    cancion.volume-=0.01; 
                 }
                 break;
         }
