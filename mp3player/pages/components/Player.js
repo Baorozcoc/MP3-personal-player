@@ -65,9 +65,9 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
                     anteriorCancion();
                     break;
                 case "ArrowLeft":
-                    if(cancion.volume!==100){
-                       setVolume(cancion.volume+1);
-                        cancion.volume+=1; 
+                    if(cancion.volume!==0){
+                       setVolume(cancion.volume-1);
+                        cancion.volume-=1; 
                     }
                     break;
             }
@@ -76,7 +76,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         return () => {
             document.removeEventListener("keydown", keyDownHandler);
         };
-    });
+    },[]);
     function refresh(){
         var n= Math.trunc(cancion.currentTime);
         setTiempo(n)
