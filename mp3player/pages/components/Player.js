@@ -50,8 +50,31 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             clearInterval(timerId);
             };
         }
-        
-        
+        window.addEventListener("keydown", function(event) {
+            switch (event.key) {
+                case "MediaTrackNext":
+                    siguienteCancion();
+                    break;
+                case "ArrowRight":
+                    if(cancion.volume!==100){
+                       setVolume(cancion.volume+1);
+                        cancion.volume+=1; 
+                    }
+                    break;
+                case "MediaTrackPrevious":
+                    anteriorCancion();
+                    break;
+                case "ArrowLeft":
+                    if(cancion.volume!==100){
+                       setVolume(cancion.volume+1);
+                        cancion.volume+=1; 
+                    }
+                    break;
+                default:
+                    break;
+            }
+    
+        });
     });
     function refresh(){
         var n= Math.trunc(cancion.currentTime);

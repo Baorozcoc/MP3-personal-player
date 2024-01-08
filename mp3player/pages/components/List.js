@@ -41,7 +41,7 @@ const List=({listado,setListado,orden,setOrden,cancionGlobal,setCancionGlobal,se
     }
     return(
     <div>
-        {listado.length&&
+        {listado && listado.length&&
         <div>
             
             <div className='fondo fw-bolder d-flex justify-content-start align-items-center p-2 flex-wrap h5'>
