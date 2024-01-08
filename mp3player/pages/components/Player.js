@@ -56,15 +56,17 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
         console.log("Ocurre el evento",e.key);
         switch (e.key) {
             case "MediaTrackNext":
+                cancion.pause();
                 siguienteCancion();
                 break;
             case "ArrowRight":
-                if(cancion.volume!==100){
+                if(cancion.volume!==1){
                 setVolume(cancion.volume+0.01);
                     cancion.volume+=0.01; 
                 }
                 break;
             case "MediaTrackPrevious":
+                cancion.pause();
                 anteriorCancion();
                 break;
             case "ArrowLeft":
