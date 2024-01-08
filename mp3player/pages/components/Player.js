@@ -51,6 +51,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             };
         }
         const keyDownHandler = (e)=>{
+            console.log("Ocurre el evento",e.key);
             switch (e.key) {
                 case "MediaTrackNext":
                     siguienteCancion();
@@ -73,10 +74,7 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
             }
         }
         window.addEventListener("keydown", keyDownHandler);
-        return () => {
-            window.removeEventListener("keydown", keyDownHandler);
-        };
-    },[]);
+    });
     function refresh(){
         var n= Math.trunc(cancion.currentTime);
         setTiempo(n)
