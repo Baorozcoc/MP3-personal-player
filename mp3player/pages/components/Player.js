@@ -54,20 +54,20 @@ const Player=({listado,Titulo, setTitulo,cancion,setCancion,Autor,setAutor,Categ
     });
     const keyDownHandler = (e)=>{
         switch (e.key) {
-            /*case "MediaTrackNext":
+            case "MediaTrackNext":
                 cancion.pause();
                 siguienteCancion();
-                break;*/
+                break;
             case "ArrowRight":
                 if(cancion.volume!==1){
                     setVolume(cancion.volume+0.01);
                     cancion.volume+=0.01; 
                 }
                 break;
-            /*case "MediaTrackPrevious":
+            case "MediaTrackPrevious":
                 cancion.pause();
                 anteriorCancion();
-                break;*/
+                break;
             case "ArrowLeft":
                 if(cancion.volume!==0.009999999999999247){
                     setVolume(cancion.volume-0.01);
